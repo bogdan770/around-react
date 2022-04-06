@@ -12,7 +12,7 @@ function ImagePopup(props) {
           alt={`${props.selectedCard.name}`}
           src={props.selectedCard.link}
         />
-        <p className="image-popup__title">{`${props.selectedCard.name}`}</p>
+        <p className="image-popup__title">{props.selectedCard.name}</p>
       </div>
     </div>
   );
