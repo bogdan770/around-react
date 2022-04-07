@@ -6,17 +6,17 @@ import { PopupWithForm } from "./PopupWithForm";
 import { ImagePopup } from "./ImagePopup";
 
 function App() {
-  const [isEditProfilePopupOpen, setIsStateForProfilePopup] = useState(false);
-  const [isAddPlacePopupOpen, setIsStateAddPlacePopup] = useState(false);
+  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
+  const [isAddPlacePopupOpen, setIAddPlacePopup] = useState(false);
   const [isEditAvatarPopupOpen, setIsStateEditAvatarPopup] = useState(false);
-  const [selectedCard, setIsSelectedCard] = useState([]);
+  const [selectedCard, setIsSelectedCard] = useState({});
   const [isImagePopupIsOpen, setIsStateImagePopup] = useState(false);
 
   function handleEditAvatarClick() {
-    setIsStateForProfilePopup(true);
+    setIsEditProfilePopupOpen(true);
   }
   function handleAddPlaceClick() {
-    setIsStateAddPlacePopup(true);
+    setIAddPlacePopup(true);
   }
   function handleEditProfileClick() {
     setIsStateEditAvatarPopup(true);
@@ -28,10 +28,10 @@ function App() {
   }
 
   function closeAllPopups() {
-    setIsStateForProfilePopup(false);
-    setIsStateAddPlacePopup(false);
+    setIsEditProfilePopupOpen(false);
+    setIAddPlacePopup(false);
     setIsStateEditAvatarPopup(false);
-    setIsStateImagePopup(null);
+    setIsStateImagePopup({});
   }
 
   return (

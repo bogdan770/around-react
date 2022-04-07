@@ -9,7 +9,7 @@ function ImagePopup(props) {
         ></button>
         <img
           className="image-popup__image"
-          alt={`${props.selectedCard.name}`}
+          alt={props.selectedCard.name}
           src={props.selectedCard.link}
         />
         <p className="image-popup__title">{props.selectedCard.name}</p>
