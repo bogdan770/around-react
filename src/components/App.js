@@ -9,8 +9,8 @@ function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIAddPlacePopup] = useState(false);
   const [isEditAvatarPopupOpen, setIsStateEditAvatarPopup] = useState(false);
-  const [selectedCard, setIsSelectedCard] = useState({});
-  const [isImagePopupIsOpen, setIsStateImagePopup] = useState(false);
+  const [selectedCard, setSelectedCard] = useState({});
+  const [isImagePopupOpen, setIsImagePopupOpen] = useState(false);
 
   function handleEditAvatarClick() {
     setIsEditProfilePopupOpen(true);
@@ -23,15 +23,16 @@ function App() {
   }
 
   function handleCardClick(props) {
-    setIsSelectedCard(props);
-    setIsStateImagePopup(true);
+    setSelectedCard(props);
+    setIsImagePopupOpen(true);
   }
 
   function closeAllPopups() {
     setIsEditProfilePopupOpen(false);
     setIAddPlacePopup(false);
     setIsStateEditAvatarPopup(false);
-    setIsStateImagePopup({});
+    setIsImagePopupOpen(false);
+    setSelectedCard({});
   }
 
   return (
@@ -47,7 +48,7 @@ function App() {
         isEditProfilePicOpen={isEditAvatarPopupOpen}
         closeThePopups={closeAllPopups}
         selectedCard={selectedCard}
-        isImagePopupIsOpen={isImagePopupIsOpen}
+        isImagePopupOpen={isImagePopupOpen}
       />
 
       <PopupWithForm
@@ -127,7 +128,7 @@ function App() {
       </PopupWithForm>
       <ImagePopup
         selectedCard={selectedCard}
-        isOpen={isImagePopupIsOpen}
+        isOpen={isImagePopupOpen}
         isClose={closeAllPopups}
       />
       <Footer />
