@@ -19,7 +19,7 @@ function App() {
   const [isImagePopupOpen, setIsImagePopupOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [cards, setCards] = useState([]);
-  const currentUser = React.useContext(CurrentUserContext);
+
   useEffect(() => {
     api
       .getUserInfo()
@@ -98,13 +98,13 @@ function App() {
       .catch((err) => console.log(err));
   }
 
-  function handleUpdateUser({ name, profession }) {
+  function handleUpdateUser({ name, about }) {
     api
-      .setUserInfo(name, profession)
+      .setUserInfo(name, about)
       .then(() => {
         setCurrentUser({
           name,
-          profession,
+          about,
         });
       })
       .then(() => closeAllPopups())

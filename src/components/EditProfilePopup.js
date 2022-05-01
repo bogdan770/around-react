@@ -5,18 +5,18 @@ import CurrentUserContext from "../contexts/CurrentUserContext";
 export function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
   const userInfo = useContext(CurrentUserContext);
   const [name, setName] = useState("");
-  const [profession, setprofession] = useState("");
+  const [about, setAbout] = useState("");
 
   useEffect(() => {
     setName(userInfo.name);
-    setprofession(userInfo.about);
+    setAbout(userInfo.about);
   }, [userInfo]);
 
   function handleSubmit(e) {
     e.preventDefault();
     onUpdateUser({
       name,
-      profession,
+      about,
     });
   }
 
@@ -51,8 +51,8 @@ export function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
         required
         minLength="2"
         maxLength="200"
-        value={profession || ""}
-        onChange={(e) => setprofession(e.target.value)}
+        value={about || ""}
+        onChange={(e) => setAbout(e.target.value)}
       />
       <span id="userJob-error" className="popup__error"></span>
     </PopupWithForm>
