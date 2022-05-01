@@ -4,7 +4,7 @@ import Header from "./Header";
 import Main from "./Main";
 import { PopupWithForm } from "./PopupWithForm";
 import { ImagePopup } from "./ImagePopup";
-import CurrentUserContext from "../context/CurrentUserContext";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 import { EditProfilePopup } from "./EditProfilePopup";
 import { EditAvatarPopup } from "./EditAvatarPopup";
 import { AddPlacePopup } from "./AddPlacePopup";
@@ -19,7 +19,7 @@ function App() {
   const [isImagePopupOpen, setIsImagePopupOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [cards, setCards] = useState([]);
-
+  const currentUser = React.useContext(CurrentUserContext);
   useEffect(() => {
     api
       .getUserInfo()

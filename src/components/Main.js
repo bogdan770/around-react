@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 // import { ImagePopup } from "./ImagePopup";
 // import { api } from "../utils/api";
 import { Card } from "./Card";
-import CurrentUserContext from "../context/CurrentUserContext";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 
 function Main({
   onAddPlaceClick,
