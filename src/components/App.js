@@ -103,6 +103,7 @@ function App() {
       .setUserInfo(name, about)
       .then(() => {
         setCurrentUser({
+          ...currentUser,
           name,
           about,
         });
